@@ -79,7 +79,7 @@ total_data = [["Company Name", "Contact No.", "Address", "Specialisation"]]
 while page < 500:
 
     # Based URL used to collate individual company URL, once loop finishes add '1' to page variable
-    base_url = f'https://www.scal.com.sg/helper/searchmembers?index={page}&companyName=&memberType=&regnhead=&workhead='
+    base_url = f'{page}'
     base_url_contents = requests.get(base_url)
 
     # Checking if html successfully requested
