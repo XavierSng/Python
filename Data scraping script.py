@@ -65,7 +65,7 @@ total_data = [["Company Name", "Contact No.", "UEN No.", "Address", "Specialisat
 while page < 1000:
 
     # Based URL used to collate individual company URL, once loop finishes add '1' to page variable
-    base_url = f'https://bca.gov.sg/BCADirectory/Search/Result?pBLSSelected=%2C140%2C141%2C142%2C143%2C144%2C145%2C146%2C147&pGrading=NONE&page={page}&d=0&pCLSCondition=AND&pBLSCondition=OR'
+    base_url = f'{page}'
     base_url_html = requests.get(base_url)
 
     # Checking if html successfully requested
@@ -82,7 +82,7 @@ while page < 1000:
 
             for incomplete_url in url_list:
 
-                company_url = "https://www.bca.gov.sg" + incomplete_url['href']
+                company_url = "https://www." + incomplete_url['href']
 
                 company_contacts(company_url)
 
